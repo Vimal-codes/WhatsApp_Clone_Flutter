@@ -39,7 +39,7 @@ class _CommunityPageState extends State<CommunityPage> {
         ),
         body: Column(
           children: [
-            SizedBox(height: 25,),
+            SizedBox(height: 26,),
             Container(
               height: 200,
               width: 200,
