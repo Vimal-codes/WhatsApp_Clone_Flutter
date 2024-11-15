@@ -1,4 +1,5 @@
 import 'package:chatpage/screens/callpage.dart';
+import 'package:chatpage/screens/communities.dart';
 import 'package:chatpage/screens/home.dart';
 import 'package:chatpage/screens/splash.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(primaryColor: Color(0xFFFEFFFE)),
       debugShowCheckedModeBanner: false,
-      home: ChatPage(),
+      home: CommunityPage(),
     );
   }
 }

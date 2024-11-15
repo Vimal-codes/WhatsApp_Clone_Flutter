@@ -335,6 +335,7 @@ class _ChatPageState extends State<ChatPage> {
                 const NavigationDestination(icon: Icon(Icons.update_sharp, color: Colors.black), label: "Updates"),
                 const NavigationDestination(icon: Icon(Icons.group, color: Colors.black), label: "Communities"),
                 const NavigationDestination(icon: Icon(Icons.call, color: Colors.black), label: "Calls"),
+
               ],
             ),
           ),
