@@ -66,3 +66,11 @@ class StatusSeen {
     required this.isSeen,
   });
 }
+
+class Contact {
+  final String name;
+  final String subtitle;
+  final String url;
+
+  Contact({required this.name, required this.subtitle, required this.url});
+}
