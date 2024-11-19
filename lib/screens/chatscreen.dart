@@ -2,10 +2,42 @@ import 'package:flutter/material.dart';
 
 import '../data.dart';
 
-class ChatScreen extends StatelessWidget {
-  final Chat chat;
+class ChatScreen extends StatefulWidget {
 
-  const ChatScreen({Key? key, required this.chat}) : super(key: key);
+  final Contact contact;
+
+  const ChatScreen({Key? key, required this.contact}) : super(key: key);
+
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+
+  final TextEditingController _messageController = TextEditingController();
+  bool _isTyping = false;  // To track if the user is typing
+
+  @override
+  void initState() {
+    super.initState();
+    // Add a listener to the controller to detect text changes
+    _messageController.addListener(_onMessageChanged);
+  }
+
+  @override
+  void dispose() {
+    // Remove the listener and dispose the controller
+    _messageController.removeListener(_onMessageChanged);
+    _messageController.dispose();
+    super.dispose();
+  }
+
+  // Function to update the state when the message changes
+  void _onMessageChanged() {
+    setState(() {
+      _isTyping = _messageController.text.isNotEmpty;  // Check if there's any text
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +51,12 @@ class ChatScreen extends StatelessWidget {
           title: Row(
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage(chat.imgPath),
+                backgroundImage: NetworkImage(widget.contact.url),
                 radius: 20,
               ),
               const SizedBox(width: 10),
               Text(
-                chat.name,
+                widget.contact.name,
                 style: const TextStyle(fontSize: 18),
               ),
             ],
@@ -46,13 +78,11 @@ class ChatScreen extends StatelessWidget {
         ),
         body: Stack(
           children: [
-            Expanded(
-              child: Center(
-                child: Image.asset(
-                  "assets/image/chat.png",
-                  fit: BoxFit.fill, // Adjust this as needed (e.g., BoxFit.fill, BoxFit.cover)
-                  width: double.infinity, // Stretch the image to the full width
-                ),
+            Positioned.fill(
+              child: Image.asset(
+                "assets/image/chat.png",
+                fit: BoxFit.cover, // Adjust this as needed (e.g., BoxFit.fill, BoxFit.cover)
+                width: double.infinity, // Stretch the image to the full width
               ),
             ),
             Positioned(
@@ -63,12 +93,13 @@ class ChatScreen extends StatelessWidget {
                   Container(
                     width: 295, // Set the desired width for the TextField
                     child: TextField(
+                      controller: _messageController, // Attach the controller
                       decoration: InputDecoration(
                         hintText: 'Message',
                         hintStyle: TextStyle(
                           color: Colors.grey[700],
                           fontSize: 16,
-                          fontWeight: FontWeight.w100
+                          fontWeight: FontWeight.w100,
                         ),
                         prefixIcon: Icon(
                           Icons.emoji_emotions_outlined,
@@ -77,9 +108,16 @@ class ChatScreen extends StatelessWidget {
                         suffixIcon: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.attach_file, color: Colors.grey[700], size: 22,),
+                            Icon(
+                              Icons.attach_file,
+                              color: Colors.grey[700],
+                              size: 22,
+                            ),
                             SizedBox(width: 17),
-                            Icon(Icons.camera_alt_outlined, color: Colors.grey[700]),
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              color: Colors.grey[700],
+                            ),
                             SizedBox(width: 10),
                           ],
                         ),
@@ -93,6 +131,7 @@ class ChatScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   const SizedBox(width: 5), // Space between TextField and FloatingActionButton
                   Container(
                     height: 48, // Match the height of the TextField
@@ -102,11 +141,18 @@ class ChatScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.mic,
-                        size: 20,
-                        color: Colors.white,
+                      onPressed: () {
+                        if (_isTyping) {
+                          // Send the message
+                          _messageController.clear();  // Clear input field after sending message
+                        } else {
+                          // Start recording if the mic is clicked
+                        }
+                      },
+                      icon: Icon(
+                        _isTyping ? Icons.send_sharp : Icons.mic,
+                        size: 25,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -116,6 +162,7 @@ class ChatScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    );;
   }
 }
+

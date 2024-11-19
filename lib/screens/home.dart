@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../data.dart';
 import 'callpage.dart';
 import 'chatscreen.dart';
+import 'contact_list.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -323,12 +324,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                 return GestureDetector(
                   onTap: () {
                     // Navigate to ChatScreen with data
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ChatScreen(chat: filterData[index]),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ChatScreen(chat: filterData[index]),
+                    //   ),
+                    // );
                   },
                   child: Container(
                     height: 70,
@@ -440,7 +441,11 @@ class _HomeWidgetState extends State<HomeWidget> {
         height: 55,
         width: 55,
         child: FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+              return Contact_list();
+            }));
+          },
           backgroundColor: Color(0xFF1DAA60),
           child: Center(child: Icon(Icons.add_comment_sharp, color: Colors.white, size: 25,)),
         ),
