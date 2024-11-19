@@ -218,8 +218,33 @@ class _StatusPageState extends State<StatusPage> {
               },
             ),
           ],
-        )
-
+        ),
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Color(0xFFF6F5F3),
+              mini: true,
+              child: Icon(
+                Icons.edit,
+                color: Colors.black,
+                size: 24,
+              ),
+            ),
+            SizedBox(height: 10), // Space between buttons
+            Container(
+              height: 55,
+              width: 55,
+              child: FloatingActionButton(
+                onPressed: () {},
+                backgroundColor: Color(0xFF21C063),
+                elevation: 10,
+                child: Icon(Icons.photo_camera_rounded, color: Color(0xFFFEFFFE), size: 23),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
