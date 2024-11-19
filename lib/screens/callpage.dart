@@ -150,27 +150,6 @@ class _CallPageScreenState extends State<CallPageScreen> {
             child: Center(child: Icon(Icons.add_ic_call_sharp, color: Colors.white, size: 25,)),
           ),
         ),
-        bottomNavigationBar: NavigationBarTheme(
-          data: NavigationBarThemeData(
-              indicatorColor: Color(0xFFD9FCD2),
-              labelTextStyle: WidgetStateProperty.all(
-                TextStyle(color: Colors.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-
-              )
-          ),
-          child: NavigationBar(
-            backgroundColor: Color(0xFFFEFFFE),
-            destinations: [
-              const NavigationDestination(icon: Icon(Icons.chat, color: Colors.black,), label: "Chats"),
-              const NavigationDestination(icon: Icon(Icons.update_sharp, color: Colors.black,), label: "Updates"),
-              const NavigationDestination(icon: Icon(Icons.group, color: Colors.black,), label: "Communities"),
-              const NavigationDestination(icon: Icon(Icons.call,  color: Colors.black,), label: "Calls"),
-            ],
-          ),
-        ),
       ),
     );
   }

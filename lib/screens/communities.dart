@@ -26,7 +26,7 @@ class _CommunityPageState extends State<CommunityPage> {
                 style: TextStyle(
                   fontFamily: 'Roboto',
                     color: Colors.black,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     fontSize: 21
                 )
             ),
@@ -95,27 +95,6 @@ class _CommunityPageState extends State<CommunityPage> {
               ),
             ),
           ],
-        ),
-        bottomNavigationBar: NavigationBarTheme(
-          data: NavigationBarThemeData(
-              indicatorColor: Color(0xFFD9FCD2),
-              labelTextStyle: WidgetStateProperty.all(
-                TextStyle(color: Colors.black,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-
-              )
-          ),
-          child: NavigationBar(
-            backgroundColor: Colors.white,
-            destinations: [
-              const NavigationDestination(icon: Icon(Icons.chat, color: Colors.black), label: "Chats"),
-              const NavigationDestination(icon: Icon(Icons.update_sharp, color: Colors.black), label: "Updates"),
-              const NavigationDestination(icon: Icon(Icons.group, color: Colors.black), label: "Communities"),
-              const NavigationDestination(icon: Icon(Icons.call, color: Colors.black), label: "Calls"),
-            ],
-          ),
         ),
       ),
     );

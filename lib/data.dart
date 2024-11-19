@@ -36,3 +36,33 @@ class Call {
       required this.attended,
       required this.calltype});
 }
+
+class Statusmodel {
+  final String url;
+  final String name;
+  final String time;
+  final bool isSeen;
+  final int numberofStatus;
+
+  Statusmodel({
+    required this.url,
+    required this.name,
+    required this.time,
+    required this.isSeen,
+    this.numberofStatus = 1
+  });
+}
+
+class StatusSeen {
+  final String url;
+  final String name;
+  final String time;
+  final bool isSeen;
+
+  StatusSeen({
+    required this.url,
+    required this.name,
+    required this.time,
+    required this.isSeen,
+  });
+}
