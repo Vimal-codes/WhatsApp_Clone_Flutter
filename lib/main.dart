@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(primaryColor: Color(0xFFFEFFFE)),
       debugShowCheckedModeBanner: false,
-      home: ChatPage(),
+      home: SplashPage(),
     );
   }
 }

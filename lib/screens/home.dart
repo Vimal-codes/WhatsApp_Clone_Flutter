@@ -80,7 +80,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   List<Chat> myChat = [
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
+      imgPath: "assets/image/profile/m1.jpg",
       name: "John Doe",
       msgTitle: "Hey! How's it going?",
       time: "8:10 AM",
@@ -90,7 +90,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: true,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+      imgPath: "assets/image/profile/w1.jpg",
       name: "Jane Smith",
       msgTitle: "Let's catch up tomorrow",
       time: "9:15 AM",
@@ -100,7 +100,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: false,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+      imgPath: "assets/image/profile/m2.jpg",
       name: "Michael Johnson",
       msgTitle: "Meeting rescheduled to 3 PM",
       time: "Yesterday",
@@ -110,7 +110,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: true,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
+      imgPath: "assets/image/profile/w2.jpg",
       name: "Emily Davis",
       msgTitle: "Are you free this weekend?",
       time: "10:45 PM",
@@ -120,7 +120,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: false,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df",
+      imgPath: "assets/image/profile/m3.jpg",
       name: "Robert Brown",
       msgTitle: "Can you send the documents?",
       time: "Yesterday",
@@ -130,7 +130,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: true,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1511367461989-f85a21fda167",
+      imgPath: "assets/image/profile/w3.jpg",
       name: "Sophia Wilson",
       msgTitle: "I'll be there in 10 mins",
       time: "Yesterday",
@@ -140,7 +140,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: true,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1502764613149-7f1d229e2307",
+      imgPath: "assets/image/profile/m4.jpg",
       name: "David Lee",
       msgTitle: "Happy Birthday!",
       time: "23/10/24",
@@ -150,7 +150,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: false,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      imgPath: "assets/image/profile/w4.jpg",
       name: "Chloe White",
       msgTitle: "Do you need help with the project?",
       time: "18/10/24",
@@ -160,7 +160,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: true,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1502378735452-bc7d86632805",
+      imgPath: "assets/image/profile/m5.jpg",
       name: "James Green",
       msgTitle: "Thanks for the update",
       time: "13/09/24",
@@ -170,7 +170,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: false,
     ),
     Chat(
-      imgPath: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      imgPath: "assets/image/profile/w1.jpg",
       name: "Olivia Martinez",
       msgTitle: "Call me when you're free",
       time: "14/8/24",
@@ -180,6 +180,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       msgView: true,
     ),
   ];
+
 
   TextEditingController searchName = TextEditingController();
 
@@ -343,7 +344,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             height: 48,
                             width: 48,
                             child: CircleAvatar(
-                              backgroundImage: NetworkImage("${filterData[index].imgPath}"),
+                              backgroundImage: AssetImage("${filterData[index].imgPath}"),
                             ),
                           ),
                         ),

@@ -14,18 +14,86 @@ class Contact_list extends StatefulWidget {
 
 class _Contact_listState extends State<Contact_list> {
   List<Contact> Contactlist = [
-    Contact(name: 'Sophia', subtitle: 'Loving the little things 🌸', url: 'https://randomuser.me/api/portraits/women/45.jpg'),
-    Contact(name: 'Liam', subtitle: 'Dreaming big, living small ✨', url: 'https://randomuser.me/api/portraits/men/75.jpg'),
-    Contact(name: 'Amélie', subtitle: "I believe in kindness, coffee, and late-night talks ☕", url: 'https://randomuser.me/api/portraits/women/95.jpg'),
-    Contact(name: 'Isabella', subtitle: 'The world is my playground 🌍', url: 'https://randomuser.me/api/portraits/women/55.jpg'),
-    Contact(name: 'Hiro', subtitle: 'Exploring life one step at a time 🎌', url: 'https://randomuser.me/api/portraits/men/25.jpg'),
-    Contact(name: 'Lena', subtitle: 'Bookworm in a tech-driven world 📚💻', url: 'https://randomuser.me/api/portraits/women/15.jpg'),
-    Contact(name: 'Victor', subtitle: 'Coding by day, gaming by night 🎮', url: 'https://randomuser.me/api/portraits/men/50.jpg'),
-    Contact(name: 'Mia', subtitle: 'Catching sunsets and chasing dreams!', url: 'https://randomuser.me/api/portraits/women/30.jpg'),
-    Contact(name: 'Ezra', subtitle: 'Lost in music 🎵, found in books 📖', url: 'https://randomuser.me/api/portraits/men/60.jpg'),
-    Contact(name: 'Chiara', subtitle: 'Life’s too short for bad coffee ☕', url: 'https://randomuser.me/api/portraits/women/10.jpg'),
-    Contact(name: 'Gabriel', subtitle: 'Adventurer at heart, dreamer by soul 🚴‍♂️', url: 'https://randomuser.me/api/portraits/men/80.jpg'),
-    Contact(name: 'Elena', subtitle: 'Making memories and collecting smiles.', url: 'https://randomuser.me/api/portraits/women/20.jpg'),
+    Contact(
+      name: 'Amelia Carter',
+      subtitle: 'Nature lover 🌿',
+      url: 'assets/image/profile/w5.jpg',
+    ),
+    Contact(
+      name: 'Benjamin Moore',
+      subtitle: 'Tech enthusiast 💻',
+      url: 'assets/image/profile/m4.jpg',
+    ),
+    Contact(
+      name: 'Chloe White',
+      subtitle: 'Life’s too short for bad coffee ☕',
+      url: 'assets/image/profile/w4.jpg',
+    ),
+    Contact(
+      name: 'David Lee',
+      subtitle: 'Lost in music 🎵, found in books 📖',
+      url: 'assets/image/profile/m7.jpg',
+    ),
+    Contact(
+      name: 'Ella Scott',
+      subtitle: 'Coffee addict ☕',
+      url: 'assets/image/profile/w6.jpg',
+    ),
+    Contact(
+      name: 'Emily Davis',
+      subtitle: 'Catching sunsets and chasing dreams!',
+      url: 'assets/image/profile/w3.jpg',
+    ),
+    Contact(
+      name: 'Hannah White',
+      subtitle: 'Photographer at heart 📸',
+      url: 'assets/image/profile/w7.jpg',
+    ),
+    Contact(
+      name: 'James Green',
+      subtitle: 'Coding by day, gaming by night 🎮',
+      url: 'assets/image/profile/m5.jpg',
+    ),
+    Contact(
+      name: 'Jane Smith',
+      subtitle: 'The world is my playground 🌍',
+      url: 'assets/image/profile/w1.jpg',
+    ),
+    Contact(
+      name: 'John Doe',
+      subtitle: 'Loving the little things 🌸',
+      url: 'assets/image/profile/m1.jpg',
+    ),
+    Contact(
+      name: 'Lucas Wright',
+      subtitle: 'Always on the go 🚀',
+      url: 'assets/image/profile/m8.jpg',
+    ),
+    Contact(
+      name: 'Michael Johnson',
+      subtitle: 'Dreaming big, living small ✨',
+      url: 'assets/image/profile/m2.jpg',
+    ),
+    Contact(
+      name: 'Nathan Hill',
+      subtitle: 'Foodie exploring the world 🌍',
+      url: 'assets/image/profile/m9.jpg',
+    ),
+    Contact(
+      name: 'Olivia Martinez',
+      subtitle: 'Bookworm in a tech-driven world 📚💻',
+      url: 'assets/image/profile/w2.jpg',
+    ),
+    Contact(
+      name: 'Robert Brown',
+      subtitle: 'Exploring life one step at a time 🎌',
+      url: 'assets/image/profile/m6.jpg',
+    ),
+    Contact(
+      name: 'Sophia Wilson',
+      subtitle: "I believe in kindness, coffee, and late-night talks ☕",
+      url: 'assets/image/profile/w3.jpg',
+    ),
   ];
 
   @override
@@ -53,12 +121,12 @@ class _Contact_listState extends State<Contact_list> {
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.search_sharp),
-            color: Colors.white,
+            color: Colors.black,
           ),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.more_vert),
-            color: Colors.white,
+            color: Colors.black,
           ),
         ],
       ),
@@ -124,8 +192,12 @@ class _Contact_listState extends State<Contact_list> {
           ),
           SizedBox(height: 6),
           ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/image/Vimal.jpg"),
+            leading: Container(
+              height: 48,
+              width: 48,
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/image/Vimal.jpg"),
+              ),
             ),
             title: Text(
               "Vimal (You)",
@@ -152,8 +224,12 @@ class _Contact_listState extends State<Contact_list> {
                     ),
                   );
                 },
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(contact.url),
+                leading: Container(
+                  height: 48,
+                  width: 48,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(contact.url),
+                  ),
                 ),
                 title: Text(
                   contact.name,
