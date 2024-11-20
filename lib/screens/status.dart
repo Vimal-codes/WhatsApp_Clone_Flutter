@@ -14,48 +14,52 @@ class _StatusPageState extends State<StatusPage> {
 
   List<Statusmodel> statuslist = [
     Statusmodel(
-        url: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-        name: "Helen",
+        url: "assets/image/status/1.jpg",
+        name: "Olivia Martinez",
         time: "6 minutes ago",
-        isSeen: false, numberofStatus : 3),
+        isSeen: false,
+        numberofStatus: 3),
     Statusmodel(
-        url: "https://randomuser.me/api/portraits/men/22.jpg",
-        name: "John",
+        url: "assets/image/status/2.jpg",
+        name: "James Green",
         time: "45 minutes ago",
-        isSeen: false, numberofStatus : 1),
+        isSeen: false,
+        numberofStatus: 1),
     Statusmodel(
-        url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+        url: "assets/image/status/3.jpg",
         name: "Emma",
         time: "10:30 am",
-        isSeen: true, numberofStatus : 4),
+        isSeen: true,
+        numberofStatus: 4),
     Statusmodel(
-        url: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
+        url: "assets/image/status/4.jpg",
         name: "Michael",
         time: "6:10 am",
-        isSeen: false, numberofStatus: 2),
+        isSeen: false,
+        numberofStatus: 2),
     Statusmodel(
-        url: "https://images.unsplash.com/photo-1551218808-94e220e084d2",
-        name: "Sophia",
+        url: "assets/image/status/5.jpg",
+        name: "Sophia Wilson",
         time: "Yesterday",
-        isSeen: true, numberofStatus: 3),
+        isSeen: true,
+        numberofStatus: 3),
   ];
 
   List<StatusSeen> seenlist = [
     StatusSeen(
-      url: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-      name: "Rose",
+      url: "assets/image/status/6.jpg",
+      name: "David",
       time: "4:22 pm",
-      isSeen: true, ),
+      isSeen: true,
+    ),
     StatusSeen(
-      url: "https://randomuser.me/api/portraits/men/22.jpg",
-      name: "Nora",
+      url: "assets/image/status/7.jpg",
+      name: "Emily Davis",
       time: "Yesterday",
-      isSeen:true,),
-    StatusSeen(
-      url: "https://images.unsplash.com/photo-1551218808-94e220e084d2",
-      name: "david",
-      time: "Yesterday",
-      isSeen: true, )];
+      isSeen: true,
+    ),
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -154,16 +158,25 @@ class _StatusPageState extends State<StatusPage> {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: ListTile(
-                    leading: StatusView(
-                      radius: 27,
-                      spacing: 15,
-                      strokeWidth: 2,
-                      indexOfSeenStatus: list.isSeen ? 2 : 0, // Show seen status
-                      numberOfStatus: list.numberofStatus ?? 1,
-                      padding: 4,
-                      centerImageUrl: list.url,
-                      seenColor: Colors.grey,
-                      unSeenColor: Color(0xFF21C063),
+                    leading: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        StatusView(
+                          radius: 28,
+                          spacing: 15,
+                          strokeWidth: 2,
+                          indexOfSeenStatus: list.isSeen ? 2 : 0, // Show seen status
+                          numberOfStatus: list.numberofStatus ?? 1,
+                          padding: 4,
+                          centerImageUrl: "",
+                          seenColor: Colors.grey,
+                          unSeenColor: Color(0xFF21C063),
+                        ),
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage(list.url),
+                        )
+                      ],
                     ),
                     title: Text(
                       list.name,
@@ -194,16 +207,25 @@ class _StatusPageState extends State<StatusPage> {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: ListTile(
-                    leading: StatusView(
-                      radius: 28,
-                      spacing: 15,
-                      strokeWidth: 2,
-                      indexOfSeenStatus: list.isSeen ? 2 : 0, // Show seen status
-                      numberOfStatus: 1,
-                      padding: 4,
-                      centerImageUrl: list.url,
-                      seenColor: Colors.grey,
-                      unSeenColor: Color(0xFF21C063),
+                    leading: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        StatusView(
+                          radius: 28,
+                          spacing: 15,
+                          strokeWidth: 2,
+                          indexOfSeenStatus: list.isSeen ? 2 : 0, // Show seen status
+                          numberOfStatus: 1,
+                          padding: 4,
+                          centerImageUrl: "",
+                          seenColor: Colors.grey,
+                          unSeenColor: Color(0xFF21C063),
+                        ),
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage(list.url),
+                        )
+                      ],
                     ),
                     title: Text(
                       list.name,

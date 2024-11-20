@@ -64,7 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
           title: Row(
             children: [
               CircleAvatar(
-                backgroundImage: NetworkImage(widget.contact.url),
+                backgroundImage: AssetImage(widget.contact.url),
                 radius: 20,
               ),
               const SizedBox(width: 10),
@@ -121,8 +121,8 @@ class _ChatScreenState extends State<ChatScreen> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 18,
+                                    top: 4,
+                                    bottom: 19,
                                     left: 15,
                                     right: 40,
                                   ),

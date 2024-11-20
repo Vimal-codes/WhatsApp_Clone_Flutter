@@ -13,16 +13,80 @@ class CallPageScreen extends StatefulWidget {
 class _CallPageScreenState extends State<CallPageScreen> {
 
   List<Call> callList = [
-    Call(url: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde", names: "zoe", time: "45 minutes ago", callstatus: false, attended: true, calltype: true),
-    Call(url: "https://images.unsplash.com/photo-1517841905240-472988babdf9", names: "david", time: "Today, 2:30 pm", callstatus: false, attended: false, calltype: true),
-    Call(url: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d", names: "Alex", time: "Today, 9:12 am", callstatus: false, attended: true, calltype: true),
-    Call(url: "https://images.unsplash.com/photo-1517841905240-472988babdf9", names: "david", time: "Yesterday, 11:30 pm", callstatus: true, attended: false, calltype: false),
-    Call(url: "https://images.unsplash.com/photo-1517841905240-472988babdf9", names: "david", time: "Yesterday, 11:29 pm", callstatus: false, attended: false, calltype: true),
-    Call(url: "https://images.unsplash.com/photo-1517841905240-472988babdf9", names: "david", time: "Yesterday, 10:46 pm", callstatus: false, attended: true, calltype: false),
-    Call(url: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df", names: "liam", time: "yesterday, 8:23 pm", callstatus: false, attended: true, calltype: true),
-    Call(url: "https://images.unsplash.com/photo-1511367461989-f85a21fda167", names: "hope", time: "yesterday, 5:02 pm", callstatus: false, attended: false, calltype: false),
-    Call(url: "https://images.unsplash.com/photo-1502764613149-7f1d229e2307", names: "veer", time: "Yesterday, 3:42 pm", callstatus: true, attended: true, calltype: true),
+    Call(
+      url: "assets/image/profile/w1.jpg",
+      names: "Jane Smith",
+      time: "45 minutes ago",
+      callstatus: false,
+      attended: true,
+      calltype: true,
+    ),
+    Call(
+      url: "assets/image/profile/m4.jpg",
+      names: "David Lee",
+      time: "Today, 2:30 pm",
+      callstatus: false,
+      attended: false,
+      calltype: true,
+    ),
+    Call(
+      url: "assets/image/profile/m2.jpg",
+      names: "Michael Johnson",
+      time: "Today, 9:12 am",
+      callstatus: false,
+      attended: true,
+      calltype: true,
+    ),
+    Call(
+      url: "assets/image/profile/m4.jpg",
+      names: "David Lee",
+      time: "Yesterday, 11:30 pm",
+      callstatus: true,
+      attended: false,
+      calltype: false,
+    ),
+    Call(
+      url: "assets/image/profile/m4.jpg",
+      names: "David Lee",
+      time: "Yesterday, 11:29 pm",
+      callstatus: false,
+      attended: false,
+      calltype: true,
+    ),
+    Call(
+      url: "assets/image/profile/m4.jpg",
+      names: "David Lee",
+      time: "Yesterday, 10:46 pm",
+      callstatus: false,
+      attended: true,
+      calltype: false,
+    ),
+    Call(
+      url: "assets/image/profile/m5.jpg",
+      names: "James Green",
+      time: "Yesterday, 8:23 pm",
+      callstatus: false,
+      attended: true,
+      calltype: true,
+    ),
+    Call(
+      url: "assets/image/profile/w3.jpg",
+      names: "Sophia Wilson",
+      time: "Yesterday, 5:02 pm",
+      callstatus: false,
+      attended: false,
+      calltype: false,
+    ),
+    Call(
+      url: "assets/image/profile/m1.jpg",
+      names: "John Doe",
+      time: "Yesterday, 3:42 pm",
+      callstatus: true,
+      attended: true,
+      calltype: true,
+    ),
   ];
+
 
 
 
@@ -113,7 +177,7 @@ class _CallPageScreenState extends State<CallPageScreen> {
                 return ListTile(
                   leading: CircleAvatar(
                     radius: 22,
-                    backgroundImage: NetworkImage(callList[index].url),
+                    backgroundImage: AssetImage(callList[index].url),
                   ),
                   title: Text(
                     callList[index].names,
